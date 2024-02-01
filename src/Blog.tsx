@@ -4,7 +4,6 @@ import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import XIcon from '@mui/icons-material/X';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Header from './Header';
 import MainFeaturedPost from './MainFeaturedPost';
@@ -15,7 +14,6 @@ import Footer from './Footer';
 import post1 from "./blog-post.1.md";
 import post2 from './blog-post.2.md';
 import post3 from './blog-post.3.md';
-import {LinkedIn} from "@mui/icons-material";
 
 // const sections = [
 //   { title: 'Technology', url: '#' },
