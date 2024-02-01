@@ -3,7 +3,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import FacebookIcon from '@mui/icons-material/Facebook';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import XIcon from '@mui/icons-material/X';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Header from './Header';
@@ -15,6 +15,7 @@ import Footer from './Footer';
 import post1 from "./blog-post.1.md";
 import post2 from './blog-post.2.md';
 import post3 from './blog-post.3.md';
+import {LinkedIn} from "@mui/icons-material";
 
 // const sections = [
 //   { title: 'Technology', url: '#' },
@@ -60,9 +61,9 @@ const featuredPosts = [
 const posts = [post1, post2, post3];
 
 const sidebar = {
-  title: 'About',
+  title: 'About Gigi',
   description:
-    'Etiam porta sem malesuada magna mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.',
+    'Enthusiastical data scientist and machine learning engineer.',
   archives: [
     { title: 'March 2020', url: '#' },
     { title: 'February 2020', url: '#' },
@@ -77,9 +78,8 @@ const sidebar = {
     { title: 'April 1999', url: '#' },
   ],
   social: [
-    { name: 'GitHub', icon: GitHubIcon },
-    { name: 'X', icon: XIcon },
-    { name: 'Facebook', icon: FacebookIcon },
+    { name: 'GitHub', icon: GitHubIcon, url: "https://github.com/gigifokchiman" },
+    { name: 'LinkedIn', icon: LinkedInIcon, url: "https://www.linkedin.com/in/gigifokcm/" }
   ],
 };
 
