@@ -21,16 +21,18 @@ export default function Header(props: HeaderProps) {
     <React.Fragment>
       <Toolbar sx={{ borderBottom: 1, borderColor: 'divider' }}>
         {/*<Button size="small">Subscribe</Button>*/}
-        <Typography
-          component="h2"
-          variant="h5"
-          color="inherit"
-          align="center"
-          noWrap
-          sx={{ flex: 1 }}
-        >
+        <a href={'/'} style={{ textDecoration: 'none', color: 'inherit' }}>
+          <Typography
+            component="h2"
+            variant="h5"
+            color="inherit"
+            align="left"
+            noWrap
+            sx={{ flex: 1 }}
+          >
           {title}
-        </Typography>
+         </Typography>
+        </a>
           {/*TODO: enable search*/}
         <IconButton>
           <SearchIcon />

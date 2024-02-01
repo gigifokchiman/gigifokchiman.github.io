@@ -29,7 +29,7 @@ import post3 from './blog-post.3.md';
 // ];
 
 const mainFeaturedPost = {
-  title: 'Title of a longer featured blog post',
+  title: '',
   description:
     "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
   image: 'https://source.unsplash.com/random?wallpapers',
@@ -90,7 +90,7 @@ export default function Blog() {
       <CssBaseline />
       <Container maxWidth="lg">
         {/*<Header title="Blog" sections={sections} />*/}
-        <Header title="Blog" sections={[]} />
+        <Header title="Gigi Fok's Blog" sections={[]} />
         <main>
           <MainFeaturedPost post={mainFeaturedPost} />
           <Grid container spacing={4}>
@@ -109,10 +109,10 @@ export default function Blog() {
           </Grid>
         </main>
       </Container>
-      <Footer
-        title="Footer"
-        description="Something here to give the footer a purpose!"
-      />
+      {/*<Footer*/}
+      {/*  title="Footer"*/}
+      {/*  description="Something here to give the footer a purpose!"*/}
+      {/*/>*/}
     </ThemeProvider>
   );
 }
