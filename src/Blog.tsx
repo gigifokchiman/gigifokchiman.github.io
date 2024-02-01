@@ -16,18 +16,18 @@ import post1 from "./blog-post.1.md";
 import post2 from './blog-post.2.md';
 import post3 from './blog-post.3.md';
 
-const sections = [
-  { title: 'Technology', url: '#' },
-  { title: 'Design', url: '#' },
-  { title: 'Culture', url: '#' },
-  { title: 'Business', url: '#' },
-  { title: 'Politics', url: '#' },
-  { title: 'Opinion', url: '#' },
-  { title: 'Science', url: '#' },
-  { title: 'Health', url: '#' },
-  { title: 'Style', url: '#' },
-  { title: 'Travel', url: '#' },
-];
+// const sections = [
+//   { title: 'Technology', url: '#' },
+//   { title: 'Design', url: '#' },
+//   { title: 'Culture', url: '#' },
+//   { title: 'Business', url: '#' },
+//   { title: 'Politics', url: '#' },
+//   { title: 'Opinion', url: '#' },
+//   { title: 'Science', url: '#' },
+//   { title: 'Health', url: '#' },
+//   { title: 'Style', url: '#' },
+//   { title: 'Travel', url: '#' },
+// ];
 
 const mainFeaturedPost = {
   title: 'Title of a longer featured blog post',
@@ -91,7 +91,8 @@ export default function Blog() {
     <ThemeProvider theme={defaultTheme}>
       <CssBaseline />
       <Container maxWidth="lg">
-        <Header title="Blog" sections={sections} />
+        {/*<Header title="Blog" sections={sections} />*/}
+        <Header title="Blog" sections={[]} />
         <main>
           <MainFeaturedPost post={mainFeaturedPost} />
           <Grid container spacing={4}>
