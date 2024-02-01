@@ -20,7 +20,7 @@ export default function Header(props: HeaderProps) {
   return (
     <React.Fragment>
       <Toolbar sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Button size="small">Subscribe</Button>
+        {/*<Button size="small">Subscribe</Button>*/}
         <Typography
           component="h2"
           variant="h5"
@@ -31,31 +31,32 @@ export default function Header(props: HeaderProps) {
         >
           {title}
         </Typography>
+          {/*TODO: enable search*/}
         <IconButton>
           <SearchIcon />
         </IconButton>
-        <Button variant="outlined" size="small">
-          Sign up
-        </Button>
+        {/*<Button variant="outlined" size="small">*/}
+        {/*  Sign up*/}
+        {/*</Button>*/}
       </Toolbar>
-      <Toolbar
-        component="nav"
-        variant="dense"
-        sx={{ justifyContent: 'space-between', overflowX: 'auto' }}
-      >
-        {sections.map((section) => (
-          <Link
-            color="inherit"
-            noWrap
-            key={section.title}
-            variant="body2"
-            href={section.url}
-            sx={{ p: 1, flexShrink: 0 }}
-          >
-            {section.title}
-          </Link>
-        ))}
-      </Toolbar>
+      {/*<Toolbar*/}
+      {/*  component="nav"*/}
+      {/*  variant="dense"*/}
+      {/*  sx={{ justifyContent: 'space-between', overflowX: 'auto' }}*/}
+      {/*>*/}
+      {/*  {sections.map((section) => (*/}
+      {/*    <Link*/}
+      {/*      color="inherit"*/}
+      {/*      noWrap*/}
+      {/*      key={section.title}*/}
+      {/*      variant="body2"*/}
+      {/*      href={section.url}*/}
+      {/*      sx={{ p: 1, flexShrink: 0 }}*/}
+      {/*    >*/}
+      {/*      {section.title}*/}
+      {/*    </Link>*/}
+      {/*  ))}*/}
+      {/*</Toolbar>*/}
     </React.Fragment>
   );
 }
