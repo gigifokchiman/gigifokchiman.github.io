@@ -10,10 +10,11 @@ import MainFeaturedPost from './MainFeaturedPost';
 import FeaturedPost from './FeaturedPost';
 import Main from './Main';
 import Sidebar from './Sidebar';
-import Footer from './Footer';
+// import Footer from './Footer';
 import post1 from "./blog-post.1.md";
 import post2 from './blog-post.2.md';
 import post3 from './blog-post.3.md';
+import FeatureImage from 'public/cypress_2024.png'
 
 // const sections = [
 //   { title: 'Technology', url: '#' },
@@ -29,12 +30,12 @@ import post3 from './blog-post.3.md';
 // ];
 
 const mainFeaturedPost = {
-  title: '',
+  title: "",
   description:
-    "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
-  image: 'https://source.unsplash.com/random?wallpapers',
+    "",
+  image:  FeatureImage,
   imageText: 'main image description',
-  linkText: 'Continue reading…',
+  linkText: '',
 };
 
 const featuredPosts = [
@@ -62,19 +63,20 @@ const sidebar = {
   title: 'About Gigi',
   description:
     'Enthusiastical data scientist and machine learning engineer.',
-  archives: [
-    { title: 'March 2020', url: '#' },
-    { title: 'February 2020', url: '#' },
-    { title: 'January 2020', url: '#' },
-    { title: 'November 1999', url: '#' },
-    { title: 'October 1999', url: '#' },
-    { title: 'September 1999', url: '#' },
-    { title: 'August 1999', url: '#' },
-    { title: 'July 1999', url: '#' },
-    { title: 'June 1999', url: '#' },
-    { title: 'May 1999', url: '#' },
-    { title: 'April 1999', url: '#' },
-  ],
+  archives: [],
+  // archives: [
+  //   // { title: 'March 2020', url: '#' },
+  //   // { title: 'February 2020', url: '#' },
+  //   // { title: 'January 2020', url: '#' },
+  //   // { title: 'November 1999', url: '#' },
+  //   // { title: 'October 1999', url: '#' },
+  //   // { title: 'September 1999', url: '#' },
+  //   // { title: 'August 1999', url: '#' },
+  //   // { title: 'July 1999', url: '#' },
+  //   // { title: 'June 1999', url: '#' },
+  //   // { title: 'May 1999', url: '#' },
+  //   // { title: 'April 1999', url: '#' },
+  // ],
   social: [
     { name: 'GitHub', icon: GitHubIcon, url: "https://github.com/gigifokchiman" },
     { name: 'LinkedIn', icon: LinkedInIcon, url: "https://www.linkedin.com/in/gigifokcm/" }
