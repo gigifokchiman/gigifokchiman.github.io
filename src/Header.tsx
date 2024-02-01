@@ -39,7 +39,7 @@ export default function Header(props: HeaderProps) {
         {/*  Sign up*/}
         {/*</Button>*/}
       </Toolbar>
-      {sections.length > 1 && ( // Add this line
+      {sections.length >= 1 && ( // Add this line
       <Toolbar
         component="nav"
         variant="dense"
