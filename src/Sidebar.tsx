@@ -31,7 +31,6 @@ export default function Sidebar(props: SidebarProps) {
         <Typography>{description}</Typography>
       </Paper>
         {archives.length >= 1 && (
-
       <Typography variant="h6" gutterBottom sx={{ mt: 3 }}>
         Archives
       </Typography>
@@ -39,25 +38,6 @@ export default function Sidebar(props: SidebarProps) {
       {archives.map((archive) => (
         <Link display="block" variant="body1" href={archive.url} target="_blank" key={archive.title}>
           {archive.title}
-        </Link>
-      ))}
-
-      <Typography variant="h6" gutterBottom sx={{ mt: 3 }}>
-        Social
-      </Typography>
-      {social.map((network) => (
-        <Link
-          display="block"
-          variant="body1"
-          href={network.url}
-          target="_blank"
-          key={network.name}
-          sx={{ mb: 0.5 }}
-        >
-          <Stack direction="row" spacing={1} alignItems="center">
-            <network.icon />
-            <span>{network.name}</span>
-          </Stack>
         </Link>
       ))}
     </Grid>
