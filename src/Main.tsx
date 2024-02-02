@@ -2,11 +2,26 @@ import * as React from 'react';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
-import Markdown from './Markdown';
+import {useEffect, useState} from "react";
+import ReactMarkdown from "react-markdown";
 
 interface MainProps {
   posts: ReadonlyArray<string>;
   title: string;
+}
+
+export const GenMdPage = ({children}: {children: string}): JSX.Element => {
+  const [mdText, mdSetText] = useState('')
+
+  useEffect(() => {
+    fetch(children).then(res => res.text()).then(text => mdSetText(text))
+  })
+
+  return (
+      <div>
+        <ReactMarkdown children={mdText} />
+      </div>
+  )
 }
 
 export default function Main(props: MainProps) {
@@ -28,10 +43,32 @@ export default function Main(props: MainProps) {
       </Typography>
       <Divider />
       {posts.map((post) => (
-        <Markdown className="markdown" key={post.substring(0, 40)}>
-          {post}
-        </Markdown>
+          <GenMdPage children={post} />
       ))}
     </Grid>
   );
+
+
+  // return (
+  //   <Grid
+  //     item
+  //     xs={12}
+  //     md={8}
+  //     sx={{
+  //       '& .markdown': {
+  //         py: 3,
+  //       },
+  //     }}
+  //   >
+  //     <Typography variant="h6" gutterBottom>
+  //       {title}
+  //     </Typography>
+  //     <Divider />
+  //     {posts.map((post) => (
+  //       <Markdown className="markdown" key={post.substring(0, 40)}>
+  //         {post}
+  //       </Markdown>
+  //     ))}
+  //   </Grid>
+  // );
 }
