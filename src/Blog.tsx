@@ -10,11 +10,16 @@ import MainFeaturedPost from './MainFeaturedPost';
 import FeaturedPost from './FeaturedPost';
 import Main from './Main';
 import Sidebar from './Sidebar';
+// import Markdown from './Markdown';
 // import Footer from './Footer';
+
+import { useState, useEffect } from 'react'
+import ReactMarkdown from 'react-markdown'
+
 import post1 from "./blog-post.1.md";
 import post2 from './blog-post.2.md';
 import post3 from './blog-post.3.md';
-import FeatureImage from 'public/cypress_2024.png'
+import FeatureImage from './cypress_2024.png'
 
 // const sections = [
 //   { title: 'Technology', url: '#' },
@@ -101,7 +106,7 @@ export default function Blog() {
             ))}
           </Grid>
           <Grid container spacing={5} sx={{ mt: 3 }}>
-            <Main title="From the firehose" posts={posts} />
+            <Main title="Recent posts" posts={posts} />
             <Sidebar
               title={sidebar.title}
               description={sidebar.description}
