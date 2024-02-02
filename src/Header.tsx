@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Toolbar from '@mui/material/Toolbar';
-// import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 import Typography from '@mui/material/Typography';
@@ -37,9 +36,6 @@ export default function Header(props: HeaderProps) {
         <IconButton>
           <SearchIcon />
         </IconButton>
-        {/*<Button variant="outlined" size="small">*/}
-        {/*  Sign up*/}
-        {/*</Button>*/}
       </Toolbar>
       {sections.length >= 1 && ( // Add this line
       <Toolbar
