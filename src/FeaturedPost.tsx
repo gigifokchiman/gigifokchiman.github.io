@@ -24,8 +24,6 @@ interface FeaturedPostProps {
 }
 
 
-
-
 export default function FeaturedPost(props: FeaturedPostProps) {
   const { post } = props;
 

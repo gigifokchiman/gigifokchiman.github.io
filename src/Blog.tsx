@@ -10,16 +10,16 @@ import MainFeaturedPost from './MainFeaturedPost';
 import FeaturedPost from './FeaturedPost';
 import Main from './Main';
 // import Sidebar from './Sidebar';
-import post1 from "./blog-post.1.md";
-import post2 from './blog-post.2.md';
-import post3 from './blog-post.3.md';
+import post1 from "./blog-post/blog-20220202.md";
+// import post2 from './blog-post/blog-post.2.md';
+// import post3 from './blog-post/blog-post.3.md';
 import FeatureImage from './img/cypress_2024.png'
 import ProfileImage from './img/Gigi_Studio_ghibli_style_close_up_of_a_womans_face_with_black_2.jpg'
 
-const sections = [
-  { title: 'Machine Learning', url: '#' },
-  { title: 'Fun', url: '#' },
-];
+// const sections = [
+//   { title: 'Machine Learning', url: '#' },
+//   { title: 'Fun', url: '#' },
+// ];
 
 const mainFeaturedPost = {
   title: "Gigi @ Cypress Mountain 2024",
@@ -44,27 +44,29 @@ const featuredPosts = [
   },
 ];
 
-const posts = [post1, post2, post3];
+const posts = [post1];
 
-const sidebar = {
-  title: 'About Gigi',
-  description:
-    'Enthusiastic data scientist and machine learning engineer.',
-  archives: [],
-  // archives: [
-  //   // { title: 'March 2020', url: '#' },
-  //   // { title: 'February 2020', url: '#' },
-  //   // { title: 'January 2020', url: '#' },
-  //   // { title: 'November 1999', url: '#' },
-  //   // { title: 'October 1999', url: '#' },
-  //   // { title: 'September 1999', url: '#' },
-  //   // { title: 'August 1999', url: '#' },
-  //   // { title: 'July 1999', url: '#' },
-  //   // { title: 'June 1999', url: '#' },
-  //   // { title: 'May 1999', url: '#' },
-  //   // { title: 'April 1999', url: '#' },
-  // ],
-};
+// const posts = [post1, post2, post3];
+
+// const sidebar = {
+//   title: 'About Gigi',
+//   description:
+//     'Enthusiastic data scientist and machine learning engineer.',
+//   archives: [],
+//   // archives: [
+//   //   // { title: 'March 2020', url: '#' },
+//   //   // { title: 'February 2020', url: '#' },
+//   //   // { title: 'January 2020', url: '#' },
+//   //   // { title: 'November 1999', url: '#' },
+//   //   // { title: 'October 1999', url: '#' },
+//   //   // { title: 'September 1999', url: '#' },
+//   //   // { title: 'August 1999', url: '#' },
+//   //   // { title: 'July 1999', url: '#' },
+//   //   // { title: 'June 1999', url: '#' },
+//   //   // { title: 'May 1999', url: '#' },
+//   //   // { title: 'April 1999', url: '#' },
+//   // ],
+// };
 
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
@@ -74,8 +76,8 @@ export default function Blog() {
     <ThemeProvider theme={defaultTheme}>
       <CssBaseline />
       <Container maxWidth="lg">
-        <Header title="Blog" sections={sections} />
-        {/*<Header title="Home" sections={[]} />*/}
+        {/*<Header title="blog-post" sections={sections} />*/}
+        <Header title="Home" sections={[]} />
         <main>
           <MainFeaturedPost post={mainFeaturedPost} />
           <Grid container spacing={4}>
