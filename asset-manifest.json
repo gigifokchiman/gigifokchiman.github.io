@@ -1,16 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.073c9b0a.css",
-    "main.js": "/static/js/main.2a6dc9f1.js",
-    "static/js/787.aa3f370e.chunk.js": "/static/js/787.aa3f370e.chunk.js",
-    "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "main.css": "/static/css/main.e6c13ad2.css",
+    "main.js": "/static/js/main.c28727e7.js",
+    "static/js/592.aa873872.chunk.js": "/static/js/592.aa873872.chunk.js",
+    "static/media/cypress_2024.png": "/static/media/cypress_2024.40a17d226061315dfbec.png",
+    "static/media/Gigi_Studio_ghibli_style_close_up_of_a_womans_face_with_black_2.jpg": "/static/media/Gigi_Studio_ghibli_style_close_up_of_a_womans_face_with_black_2.5b49bc723cfc3d65286c.jpg",
     "index.html": "/index.html",
-    "main.073c9b0a.css.map": "/static/css/main.073c9b0a.css.map",
-    "main.2a6dc9f1.js.map": "/static/js/main.2a6dc9f1.js.map",
-    "787.aa3f370e.chunk.js.map": "/static/js/787.aa3f370e.chunk.js.map"
+    "static/media/blog-20220202.md": "/static/media/blog-20220202.20d90a7d2c403d6c16ad.md",
+    "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
+    "main.c28727e7.js.map": "/static/js/main.c28727e7.js.map",
+    "592.aa873872.chunk.js.map": "/static/js/592.aa873872.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.2a6dc9f1.js"
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.c28727e7.js"
   ]
 }
