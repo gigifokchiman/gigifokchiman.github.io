@@ -1,18 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.e6c13ad2.css",
-    "main.js": "/static/js/main.c28727e7.js",
-    "static/js/592.aa873872.chunk.js": "/static/js/592.aa873872.chunk.js",
-    "static/media/cypress_2024.png": "/static/media/cypress_2024.40a17d226061315dfbec.png",
+    "main.js": "/static/js/main.1debb41f.js",
+    "static/js/453.99929d89.chunk.js": "/static/js/453.99929d89.chunk.js",
     "static/media/Gigi_Studio_ghibli_style_close_up_of_a_womans_face_with_black_2.jpg": "/static/media/Gigi_Studio_ghibli_style_close_up_of_a_womans_face_with_black_2.5b49bc723cfc3d65286c.jpg",
     "index.html": "/index.html",
     "static/media/blog-20220202.md": "/static/media/blog-20220202.20d90a7d2c403d6c16ad.md",
     "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
-    "main.c28727e7.js.map": "/static/js/main.c28727e7.js.map",
-    "592.aa873872.chunk.js.map": "/static/js/592.aa873872.chunk.js.map"
+    "main.1debb41f.js.map": "/static/js/main.1debb41f.js.map",
+    "453.99929d89.chunk.js.map": "/static/js/453.99929d89.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.c28727e7.js"
+    "static/js/main.1debb41f.js"
   ]
 }
