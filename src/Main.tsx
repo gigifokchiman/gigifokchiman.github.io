@@ -5,34 +5,43 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Skeleton from '@mui/material/Skeleton';
 import Box from '@mui/material/Box';
-import {useEffect, useRef, useState} from "react";
+import IconButton from '@mui/material/IconButton';
+import Tooltip from '@mui/material/Tooltip';
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import CheckIcon from '@mui/icons-material/Check';
+import {useEffect, useRef, useState, useCallback} from "react";
 import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
 import {oneLight} from 'react-syntax-highlighter/dist/esm/styles/prism';
 import palette from './palette';
 
 const SyntaxHighlighterComponent = SyntaxHighlighter as any;
 
-const COLLAPSED_HEIGHT = 280;
+const COLLAPSED_HEIGHT = 480;
+
+// Subtle washi paper grain texture via inline SVG noise
+const paperTexture = `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E")`;
 
 interface MainProps {
   posts: ReadonlyArray<string>;
   title: string;
 }
 
-const markdownComponents = {
-  code({className, children, ...props}: any) {
-    const match = /language-(\w+)/.exec(className || '');
-    const inline = !match;
-    return !inline ? (
-      <SyntaxHighlighterComponent
-        style={oneLight}
-        language={match[1]}
-        PreTag="div"
-      >
-        {String(children).replace(/\n$/, '')}
-      </SyntaxHighlighterComponent>
-    ) : (
+function CodeBlock({className, children, ...props}: any) {
+  const match = /language-(\w+)/.exec(className || '');
+  const inline = !match;
+  const [copied, setCopied] = useState(false);
+  const codeString = String(children).replace(/\n$/, '');
+
+  const handleCopy = useCallback(() => {
+    navigator.clipboard.writeText(codeString);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  }, [codeString]);
+
+  if (inline) {
+    return (
       <code
         style={{
           backgroundColor: palette.kinari,
@@ -45,7 +54,43 @@ const markdownComponents = {
         {children}
       </code>
     );
-  },
+  }
+
+  return (
+    <Box sx={{ position: 'relative', '&:hover .copy-btn': { opacity: 1 } }}>
+      <Tooltip title={copied ? 'Copied' : 'Copy'} placement="top">
+        <IconButton
+          className="copy-btn"
+          onClick={handleCopy}
+          size="small"
+          sx={{
+            position: 'absolute',
+            top: 8,
+            right: 8,
+            opacity: 0,
+            transition: 'opacity 0.2s ease',
+            color: palette.usuzumi,
+            bgcolor: palette.kinari,
+            '&:hover': { bgcolor: palette.suna },
+            zIndex: 1,
+          }}
+        >
+          {copied ? <CheckIcon fontSize="small" /> : <ContentCopyIcon fontSize="small" />}
+        </IconButton>
+      </Tooltip>
+      <SyntaxHighlighterComponent
+        style={oneLight}
+        language={match[1]}
+        PreTag="div"
+      >
+        {codeString}
+      </SyntaxHighlighterComponent>
+    </Box>
+  );
+}
+
+const markdownComponents = {
+  code: CodeBlock,
 };
 
 export const GenMdPage = ({children}: {children: string}): JSX.Element => {
@@ -89,8 +134,31 @@ export const GenMdPage = ({children}: {children: string}): JSX.Element => {
   }
 
   return (
-    <Card sx={{ mb: 4 }}>
-      <CardContent sx={{ p: 4, '& img': { maxWidth: '100%' } }}>
+    <Card sx={{
+      mb: 4,
+      position: 'relative',
+      '&::before': {
+        content: '""',
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        backgroundImage: paperTexture,
+        backgroundRepeat: 'repeat',
+        pointerEvents: 'none',
+        borderRadius: 'inherit',
+      },
+    }}>
+      <CardContent sx={{
+        p: 4,
+        '& img': {
+          maxWidth: '100%',
+          borderRadius: 2,
+          display: 'block',
+          margin: '16px auto',
+        },
+      }}>
         <Box
           ref={contentRef}
           sx={{
@@ -100,7 +168,7 @@ export const GenMdPage = ({children}: {children: string}): JSX.Element => {
             transition: 'max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
           }}
         >
-          <ReactMarkdown components={markdownComponents}>{mdText}</ReactMarkdown>
+          <ReactMarkdown rehypePlugins={[rehypeRaw]} components={markdownComponents}>{mdText}</ReactMarkdown>
           {!expanded && needsTruncation && (
             <Box
               sx={{
