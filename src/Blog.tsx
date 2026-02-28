@@ -13,6 +13,8 @@ import Main from './Main';
 import Footer from './Footer';
 import post1 from "./blog-post/n8n_llama.md";
 import post2 from "./blog-post/ml_model_package.md";
+import post3 from "./blog-post/test_long_post.md";
+import post4 from "./blog-post/test_docker_ml.md";
 import ProfileImage from './img/Gigi_Studio_ghibli_style_close_up_of_a_womans_face_with_black_2.jpg'
 
 const socialLinks = [
@@ -31,7 +33,7 @@ const featuredPosts = [
   },
 ];
 
-const posts = [post1, post2];
+const posts = [post4, post3, post1, post2];
 
 export default function Blog() {
   return (
