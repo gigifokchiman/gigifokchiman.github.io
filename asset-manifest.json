@@ -1,17 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.e6c13ad2.css",
-    "main.js": "/static/js/main.1debb41f.js",
-    "static/js/453.99929d89.chunk.js": "/static/js/453.99929d89.chunk.js",
+    "main.css": "/static/css/main.00804dc0.css",
+    "main.js": "/static/js/main.052fdcab.js",
+    "static/js/845.205a30e9.chunk.js": "/static/js/845.205a30e9.chunk.js",
     "static/media/Gigi_Studio_ghibli_style_close_up_of_a_womans_face_with_black_2.jpg": "/static/media/Gigi_Studio_ghibli_style_close_up_of_a_womans_face_with_black_2.5b49bc723cfc3d65286c.jpg",
+    "static/media/test_docker_ml.md": "/static/media/test_docker_ml.c5762be6f7e9f1d8d0df.md",
+    "static/media/test_long_post.md": "/static/media/test_long_post.642131f18ff473b074dc.md",
     "index.html": "/index.html",
-    "static/media/blog-20220202.md": "/static/media/blog-20220202.20d90a7d2c403d6c16ad.md",
-    "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
-    "main.1debb41f.js.map": "/static/js/main.1debb41f.js.map",
-    "453.99929d89.chunk.js.map": "/static/js/453.99929d89.chunk.js.map"
+    "static/media/n8n_llama.md": "/static/media/n8n_llama.654efd8944abf6618edb.md",
+    "static/media/ml_model_package.md": "/static/media/ml_model_package.39ea24aeeab5957cbb13.md",
+    "main.00804dc0.css.map": "/static/css/main.00804dc0.css.map",
+    "main.052fdcab.js.map": "/static/js/main.052fdcab.js.map",
+    "845.205a30e9.chunk.js.map": "/static/js/845.205a30e9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.1debb41f.js"
+    "static/css/main.00804dc0.css",
+    "static/js/main.052fdcab.js"
   ]
 }
