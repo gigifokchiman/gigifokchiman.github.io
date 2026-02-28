@@ -14,12 +14,15 @@ export const GenMdPage = ({children}: {children: string}): JSX.Element => {
   const [mdText, mdSetText] = useState('')
 
   useEffect(() => {
-    fetch(children).then(res => res.text()).then(text => mdSetText(text))
-  })
+    fetch(children)
+      .then(res => res.text())
+      .then(text => mdSetText(text))
+      .catch(err => console.error('Failed to load post:', err))
+  }, [children])
 
   return (
       <div>
-        <ReactMarkdown children={mdText} />
+        <ReactMarkdown>{mdText}</ReactMarkdown>
       </div>
   )
 }
@@ -42,8 +45,8 @@ export default function Main(props: MainProps) {
         {title}
       </Typography>
       <Divider />
-      {posts.map((post) => (
-          <GenMdPage children={post} />
+      {posts.map((post, index) => (
+          <GenMdPage key={index}>{post}</GenMdPage>
       ))}
     </Grid>
   );

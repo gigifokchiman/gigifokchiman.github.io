@@ -1,7 +1,5 @@
 import * as React from 'react';
 import Toolbar from '@mui/material/Toolbar';
-// import IconButton from '@mui/material/IconButton';
-// import SearchIcon from '@mui/icons-material/Search';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 
@@ -19,7 +17,6 @@ export default function Header(props: HeaderProps) {
   return (
     <React.Fragment>
       <Toolbar sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        {/*<Button size="small">Subscribe</Button>*/}
         <a href={'/'} style={{ textDecoration: 'none', color: 'inherit' }}>
           <Typography
             component="h2"
@@ -32,7 +29,7 @@ export default function Header(props: HeaderProps) {
           {title}
          </Typography>
         </a>
-        {sections.length >= 1 && ( // Add this line
+        {sections.length >= 1 && (
           <Toolbar
               component="nav"
               variant="dense"
@@ -51,9 +48,6 @@ export default function Header(props: HeaderProps) {
                 </Link>
             ))}
             </Toolbar>)}
-        {/*<IconButton>*/}
-        {/*  <SearchIcon />*/}
-        {/*</IconButton>*/}
       </Toolbar>
     </React.Fragment>
   );

@@ -29,13 +29,13 @@ export default function FeaturedPost(props: FeaturedPostProps) {
 
   return (
     <Grid item xs={12} md={12}>
-      <CardActionArea component="a" href="#">
+      <CardActionArea>
         <Card sx={{ display: 'flex' }}>
           <CardContent sx={{ flex: 1 }}>
             <Typography component="h2" variant="h5">
               {post.title}
             </Typography>
-            {post.date == null && (
+            {post.date != null && (
             <Typography variant="subtitle1" color="text.secondary">
               {post.date}
             </Typography>
@@ -58,9 +58,6 @@ export default function FeaturedPost(props: FeaturedPostProps) {
                   </Stack>
                 </Link>
             ))}
-            {/*<Typography variant="subtitle1" color="primary">*/}
-            {/*  Continue reading...*/}
-            {/*</Typography>*/}
           </CardContent>
           <CardMedia
             component="img"
