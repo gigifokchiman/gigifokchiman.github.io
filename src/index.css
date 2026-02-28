@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #FAF6F1;
+  background-color: #F5F0E8; /* palette.washi — keep in sync with src/palette.ts */
 }
 
 code {
