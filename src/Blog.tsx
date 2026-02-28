@@ -41,7 +41,8 @@ export default function Blog() {
     fetch('/blog-post/posts.json')
       .then(res => res.json())
       .then((entries: PostEntry[]) => {
-        setPosts(entries.map(e => `/blog-post/${e.file}`));
+        const sorted = entries.sort((a, b) => b.file.localeCompare(a.file));
+        setPosts(sorted.map(e => `/blog-post/${e.file}`));
       })
       .catch(err => {
         console.error('Failed to load posts manifest:', err);

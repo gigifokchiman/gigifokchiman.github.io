@@ -6,7 +6,10 @@
   "scripts": {
     "predeploy": "yarn run build",
     "deploy": "gh-pages -d build",
+    "generate-posts": "node scripts/generate-posts-manifest.js",
+    "prestart": "yarn generate-posts",
     "start": "react-scripts start",
+    "prebuild": "yarn generate-posts",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

@@ -11,6 +11,9 @@
 # production
 /build
 
+# auto-generated
+public/blog-post/posts.json
+
 # misc
 .DS_Store
 .idea/
