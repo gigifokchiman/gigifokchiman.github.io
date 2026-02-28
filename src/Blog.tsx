@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useEffect, useState } from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
@@ -11,10 +12,6 @@ import Header from './Header';
 import FeaturedPost from './FeaturedPost';
 import Main from './Main';
 import Footer from './Footer';
-import post1 from "./blog-post/n8n_llama.md";
-import post2 from "./blog-post/ml_model_package.md";
-import post3 from "./blog-post/test_long_post.md";
-import post4 from "./blog-post/test_docker_ml.md";
 import ProfileImage from './img/Gigi_Studio_ghibli_style_close_up_of_a_womans_face_with_black_2.jpg'
 
 const socialLinks = [
@@ -33,9 +30,24 @@ const featuredPosts = [
   },
 ];
 
-const posts = [post4, post3, post1, post2];
+interface PostEntry {
+  file: string;
+}
 
 export default function Blog() {
+  const [posts, setPosts] = useState<string[]>([]);
+
+  useEffect(() => {
+    fetch('/blog-post/posts.json')
+      .then(res => res.json())
+      .then((entries: PostEntry[]) => {
+        setPosts(entries.map(e => `/blog-post/${e.file}`));
+      })
+      .catch(err => {
+        console.error('Failed to load posts manifest:', err);
+      });
+  }, []);
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
